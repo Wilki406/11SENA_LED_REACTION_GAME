@@ -39,7 +39,7 @@ void loop() {
     Serial.println("The button is pressed");
     for(int i = 0; i < NUM_LEDS; i++) 
     {
-    leds[i] = CRGB::Blue;
+    leds[i] = CRGB::Red;
     FastLED.show();
     delay(10);
     leds[i] = CRGB::Black;
