@@ -1,8 +1,8 @@
 #include <FastLED.h>
 #define NUM_LEDS 20
-#define DATA_PIN A0
-#define SCORE_PIN 6
-#define SCORE_LEDS 6
+#define DATA_PIN 11
+#define SCORE_PIN 12
+#define SCORE_LEDS 10
  
 CRGB leds[NUM_LEDS];
 CRGB sleds[NUM_LEDS];
@@ -25,7 +25,7 @@ void setup() {
   // put your setup code here, to run once:
   FastLED.addLeds<WS2812B, DATA_PIN, GRB>(leds, NUM_LEDS);
   FastLED.addLeds<WS2812B, SCORE_PIN, GRB>(sleds, SCORE_LEDS);
-  pinMode(A3, INPUT_PULLUP);
+  pinMode(4, INPUT_PULLUP);
   Serial.begin(9600);
   Serial.println("Reset");
 }
