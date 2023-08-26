@@ -72,11 +72,11 @@ void loop() {
     u8g2.setFont(u8g2_font_logisoso28_tr);  // choose a suitable font at https://github.com/olikraus/u8g2/wiki/fntlistall
     u8g2.drawStr(4,29,"Level 1");  // write something to the internal memory
     u8g2.sendBuffer();         // transfer internal memory to the display
-    period = ledSpeed[0];
+    period = ledSpeed[1];
     if (millis() > time_now + period) {
       time_now = millis();
       if (findRandom) {
-        spot = random(16) + 5;
+        spot = random(16) + 3;
         findRandom = false;
       }
       leds[spot - 2].setRGB(255, 190, 0);
@@ -90,7 +90,7 @@ void loop() {
     if (digitalRead(4) == LOW) {
       delay(300);
       findRandom = false;
-      if (spot - 1 && Position < spot + 4) {
+      if (Position > spot - 2 && Position < spot + 4) {
         level = gameState;
         gameState = 98;
       } else {
@@ -104,11 +104,11 @@ void loop() {
     u8g2.setFont(u8g2_font_logisoso28_tr);  // choose a suitable font at https://github.com/olikraus/u8g2/wiki/fntlistall
     u8g2.drawStr(4,29,"Level 2");  // write something to the internal memory
     u8g2.sendBuffer();         // transfer internal memory to the display
-    period = ledSpeed[1];
+    period = ledSpeed[2];
     if (millis() > time_now + period) {
       time_now = millis();
       if (findRandom) {
-        spot = random(16) + 5;
+        spot = random(16) + 3;
         findRandom = false;
       }
       leds[spot - 2].setRGB(255, 190, 0);
@@ -121,7 +121,7 @@ void loop() {
     }
     if (digitalRead(4) == LOW) {
       delay(300);
-      if (spot - 1 && Position < spot + 4) {
+      if (Position > spot - 2 && Position < spot + 4) {
         level = gameState;
         gameState = 98;
       } else {
@@ -134,7 +134,7 @@ void loop() {
     u8g2.setFont(u8g2_font_logisoso28_tr);  // choose a suitable font at https://github.com/olikraus/u8g2/wiki/fntlistall
     u8g2.drawStr(4,29,"Level 3");  // write something to the internal memory
     u8g2.sendBuffer();         // transfer internal memory to the display
-    period = ledSpeed[1];
+    period = ledSpeed[2];
     if (millis() > time_now + period) {
       time_now = millis();
       if (findRandom) {
@@ -163,7 +163,7 @@ void loop() {
     u8g2.setFont(u8g2_font_logisoso28_tr);  // choose a suitable font at https://github.com/olikraus/u8g2/wiki/fntlistall
     u8g2.drawStr(4,29,"Level 4");  // write something to the internal memory
     u8g2.sendBuffer();         // transfer internal memory to the display
-    period = ledSpeed[2];
+    period = ledSpeed[3];
     if (millis() > time_now + period) {
       time_now = millis();
       if (findRandom) {
