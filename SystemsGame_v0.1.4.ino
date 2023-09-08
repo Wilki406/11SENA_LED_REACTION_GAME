@@ -76,7 +76,7 @@ void loop() {
     if (millis() > time_now + period) {
       time_now = millis();
       if (findRandom) {
-        spot = random(16) + 3;
+        spot = random(16) + 2;
         findRandom = false;
       }
       leds[spot - 2].setRGB(255, 190, 0);
@@ -108,7 +108,7 @@ void loop() {
     if (millis() > time_now + period) {
       time_now = millis();
       if (findRandom) {
-        spot = random(16) + 3;
+        spot = random(16) + 2;
         findRandom = false;
       }
       leds[spot - 2].setRGB(255, 190, 0);
