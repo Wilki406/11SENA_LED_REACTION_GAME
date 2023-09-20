@@ -23,12 +23,8 @@ byte Position = 0;
 byte level = 0;
 int speakerPin = 8;
 byte previousgameState = 0;
-const byte ledSpeed[5] = {50, 40, 35, 20, 10};
+const byte ledSpeed[5] = {50, 40, 35, 20, 0};
 bool secondchanced = false;
-
-
-
-
 
 
 //Debounce
@@ -80,7 +76,7 @@ void loop() {
     previousgameState = gameState;
     
 
-    u8g2.clearBuffer();         // clear the internal memory
+    u8g2.clearBuffer();                      // clear the internal memory
     u8g2.setFont(u8g2_font_logisoso28_tr);  // choose a suitable font at https://github.com/olikraus/u8g2/wiki/fntlistall
     u8g2.drawStr(4,29,"Level 1");  // write something to the internal memory
     u8g2.sendBuffer();         // transfer internal memory to the display
@@ -291,8 +287,8 @@ void loop() {
     // generate pseudo float in the range of 0 to 100
     float randNumber = random(100);
 
-    // probability of 40%
-    if (randNumber >= 59 && secondchanced == false)
+    // probability of 30%
+    if (randNumber >= 69 && secondchanced == false)
     {
       secondchance();
     }
