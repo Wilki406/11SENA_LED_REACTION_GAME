@@ -356,9 +356,9 @@ void loop() {
     float randNumbersc = random(100);
 
     // probability of 30%
-    if (randNumbersc >= 69 && secondchanced == false)
+    if (randNumbersc >= 69 && Specialsecondchanced == false)
     {
-      secondchance();
+      Specialsecondchance();
     }
 
     else
