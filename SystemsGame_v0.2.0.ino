@@ -289,7 +289,7 @@ void loop() {
     }
   }
 
-  if (gameState == 97) {
+  if (gameState == 10) {
     u8g2.clearBuffer();         // clear the internal memory
     u8g2.setFont(u8g2_font_logisoso28_tr);  // choose a suitable font at https://github.com/olikraus/u8g2/wiki/fntlistall
     u8g2.drawStr(4,29,"SPEC LVL");  // write something to the internal memory
@@ -321,8 +321,8 @@ void loop() {
     // generate pseudo float in the range of 0 to 100
     float randNumbergh = random(100);
 
-    // probability of 80%
-    if (randNumbergh >= 69 && ghosted == false)
+    // probability of 15%
+    if (randNumbergh >= 85 && ghosted == false)
     {
       ghostLevel();
     }
@@ -339,7 +339,7 @@ void loop() {
     float randNumbersc = random(100);
 
     // probability of 30%
-    if (randNumbersc >= 69 && secondchanced == false)
+    if (randNumbersc >= 70 && secondchanced == false)
     {
       secondchance();
     }
@@ -350,13 +350,13 @@ void loop() {
     }
   }
 
-  if (gameState == 96) {
+  if (gameState == 97) {
     
     // generate pseudo float in the range of 0 to 100
-    float randNumbersc = random(100);
+    float randNumberSsc = random(100);
 
     // probability of 30%
-    if (randNumbersc >= 69 && Specialsecondchanced == false)
+    if (randNumberSsc >= 70 && Specialsecondchanced == false)
     {
       Specialsecondchance();
     }
@@ -366,7 +366,6 @@ void loop() {
       loser();
     }
   }
-
 }
 
 void PlayGame(byte bound1, byte bound2) {
