@@ -322,7 +322,7 @@ void loop() {
     float randNumbergh = random(100);
 
     // probability of 15%
-    if (randNumbergh >= 85 && ghosted == false)
+    if (randNumbergh >= 93 && ghosted == false)
     {
       ghostLevel();
     }
