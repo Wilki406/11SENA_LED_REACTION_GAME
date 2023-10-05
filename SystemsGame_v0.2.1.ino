@@ -31,7 +31,6 @@ bool Specialsecondchanced = false;
 //Debounce
 bool findRandom = false;
 byte spot = 0;
-//have to make fakespot bytes random before being checked for being equal to spot because when it starts as zero it then is known to be not equal to spot and then doesnt randomize the new led value so just makes and leaves both as zero
 byte fakespot1 = random(20);
 byte fakespot2 = random(20);
 
