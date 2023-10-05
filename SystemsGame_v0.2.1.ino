@@ -75,7 +75,7 @@ void loop() {
         sleds[i].setRGB(0, 0, 0);
         FastLED.show();
       }
-      gameState = 10;
+      gameState = 1;
     }
     FastLED.show();
   }
