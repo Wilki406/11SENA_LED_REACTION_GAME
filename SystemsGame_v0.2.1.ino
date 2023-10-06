@@ -343,8 +343,8 @@ void loop() {
     // generate pseudo float in the range of 0 to 100
     float randNumbergh = random(100);
 
-    // probability of 15%
-    if (randNumbergh >= 93 && ghosted == false)
+    // probability of 10%
+    if (randNumbergh >= 90   && ghosted == false)
     {
       ghostLevel();
     }
@@ -352,6 +352,7 @@ void loop() {
     else
     {
       winner();
+      Serial.println(randNumbergh);
     }
   }
 
@@ -521,7 +522,7 @@ void ghostLevel() {
 
   // set secondchance bool to true to stop second chance being applicable in future.
   ghosted = true;
-  gameState = 97;
+  gameState = 10;
 }
 
 void Twinkle(byte red, byte green, byte blue, int Count, int SpeedDelay, boolean OnlyOne) {
