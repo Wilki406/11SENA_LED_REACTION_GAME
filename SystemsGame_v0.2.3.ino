@@ -89,36 +89,6 @@ void loop() {
       }
     }
   }
-    //default stage0
-    //fill_rainbow(leds, NUM_LEDS, 0, 7); //2 = longer gradient strip
-
-    /// fill_rainbow(sleds, SCORE_LEDS, 0, 7); //2 = longer gradient strip SCORE LED STRIP
-    
-
-  //   u8g2.clearBuffer();          // clear the internal memory
-  //   u8g2.setFont(u8g2_font_logisoso28_tr);  // choose a suitable font at https://github.com/olikraus/u8g2/wiki/fntlistall
-  //   u8g2.drawStr(31,29,"PLAY?");  // write something to the internal memory
-  //   u8g2.sendBuffer();         // transfer internal memory to the display
-   
-  //   if (digitalRead(4) == LOW) {
-  //     Position = 0;
-  //     findRandom = true;
-  //     u8g2.clearBuffer();         // clear the internal memory
-  //     u8g2.sendBuffer();         // transfer internal memory to the display
-  //     delay(500);
-  //     for (byte i = 0; i < NUM_LEDS; i++) {
-  //       leds[i].setRGB(0, 0, 0);
-  //       delay(40);
-  //       FastLED.show();
-  //     }
-  //     for (byte i = 0; i < SCORE_LEDS; i++) {
-  //       sleds[i].setRGB(0, 0, 0);
-  //       FastLED.show();
-  //     }
-  //     gameState = 1;
-  //   }
-  //   FastLED.show();
-  // }
 
   if (gameState == 1) {
     previousgameState = gameState;
