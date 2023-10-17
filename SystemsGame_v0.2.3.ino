@@ -20,7 +20,6 @@ byte gameState = 0;
 int period = 1000;
 unsigned long time_now = 0;
 byte Position = 0;
-byte Position2 = 0;
 byte level = 0;
 int speakerPin = 8;
 byte previousgameState = 0;
