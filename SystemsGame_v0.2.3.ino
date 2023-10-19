@@ -55,14 +55,15 @@ void loop() {
   {
     for (int i = 0; i < NUM_LEDS; ++i) {
     leds[i] = CHSV(hue + (i * 10), 255, 255);
-  }
+  
 
   //You can change the pattern speed here
-  EVERY_N_MILLISECONDS(1){
+  EVERY_N_MILLISECONDS(10){
     hue++;
-  }
   FastLED.show();
-
+  }
+  
+  }
   u8g2.clearBuffer();          // clear the internal memory
   u8g2.setFont(u8g2_font_logisoso28_tr);  // choose a suitable font at https://github.com/olikraus/u8g2/wiki/fntlistall
   u8g2.drawStr(31,29,"PLAY?");  // write something to the internal memory
