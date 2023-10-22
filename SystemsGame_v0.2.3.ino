@@ -458,14 +458,15 @@ void winner() {
     }
     FastLED.show();
     tone(speakerPin, 1000, 300);
-    delay(500);
+    delay(300);
+    tone(speakerPin, 1200, 300);
+    delay(300);
     clearLEDS();
     FastLED.show();
-    delay(500);
+    delay(300);
   }
   findRandom = true;
   Position = 0;
- 
   gameState = level + 1;
   if (gameState > 7) {
     gameState = 0;
