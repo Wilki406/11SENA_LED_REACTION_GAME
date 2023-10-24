@@ -20,6 +20,7 @@ byte gameState = 0;
 int period = 1000;
 unsigned long time_now = 0;
 byte Position = 0;
+byte Position2 = 0;
 byte level = 0;
 int speakerPin = 8;
 byte previousgameState = 0;
@@ -55,15 +56,14 @@ void loop() {
   {
     for (int i = 0; i < NUM_LEDS; ++i) {
     leds[i] = CHSV(hue + (i * 10), 255, 255);
-  
+  }
 
   //You can change the pattern speed here
-  EVERY_N_MILLISECONDS(10){
+  EVERY_N_MILLISECONDS(1){
     hue++;
+  }
   FastLED.show();
-  }
-  
-  }
+
   u8g2.clearBuffer();          // clear the internal memory
   u8g2.setFont(u8g2_font_logisoso28_tr);  // choose a suitable font at https://github.com/olikraus/u8g2/wiki/fntlistall
   u8g2.drawStr(31,29,"PLAY?");  // write something to the internal memory
@@ -89,11 +89,40 @@ void loop() {
       }
     }
   }
+    //default stage0
+    //fill_rainbow(leds, NUM_LEDS, 0, 7); //2 = longer gradient strip
+
+    /// fill_rainbow(sleds, SCORE_LEDS, 0, 7); //2 = longer gradient strip SCORE LED STRIP
+    
+
+  //   u8g2.clearBuffer();          // clear the internal memory
+  //   u8g2.setFont(u8g2_font_logisoso28_tr);  // choose a suitable font at https://github.com/olikraus/u8g2/wiki/fntlistall
+  //   u8g2.drawStr(31,29,"PLAY?");  // write something to the internal memory
+  //   u8g2.sendBuffer();         // transfer internal memory to the display
+   
+  //   if (digitalRead(4) == LOW) {
+  //     Position = 0;
+  //     findRandom = true;
+  //     u8g2.clearBuffer();         // clear the internal memory
+  //     u8g2.sendBuffer();         // transfer internal memory to the display
+  //     delay(500);
+  //     for (byte i = 0; i < NUM_LEDS; i++) {
+  //       leds[i].setRGB(0, 0, 0);
+  //       delay(40);
+  //       FastLED.show();
+  //     }
+  //     for (byte i = 0; i < SCORE_LEDS; i++) {
+  //       sleds[i].setRGB(0, 0, 0);
+  //       FastLED.show();
+  //     }
+  //     gameState = 1;
+  //   }
+  //   FastLED.show();
+  // }
 
   if (gameState == 1) {
     previousgameState = gameState;
     
-
     u8g2.clearBuffer();                      // clear the internal memory
     u8g2.setFont(u8g2_font_logisoso28_tr);  // choose a suitable font at https://github.com/olikraus/u8g2/wiki/fntlistall
     u8g2.drawStr(4,29,"Level 1");  // write something to the internal memory
@@ -138,7 +167,7 @@ void loop() {
     if (millis() > time_now + period) {
       time_now = millis();
       if (findRandom) {
-        spot = random(25) + 3;
+        spot = random(26) + 3;
         findRandom = false;
       }
       leds[spot - 2].setRGB(255, 190, 0);
@@ -310,11 +339,11 @@ void loop() {
     }
   }
 
-  if (gameState == 7) {
+  if (gameState == 8) {
     previousgameState = gameState;
     u8g2.clearBuffer();         // clear the internal memory
     u8g2.setFont(u8g2_font_logisoso28_tr);  // choose a suitable font at https://github.com/olikraus/u8g2/wiki/fntlistall
-    u8g2.drawStr(4,29,"Level 7");  // write something to the internal memory
+    u8g2.drawStr(4,29,"Level 8");  // write something to the internal memory
     u8g2.sendBuffer();         // transfer internal memory to the display
     period = ledSpeed[4];
     
@@ -458,17 +487,16 @@ void winner() {
     }
     FastLED.show();
     tone(speakerPin, 1000, 300);
-    delay(300);
-    tone(speakerPin, 1200, 300);
-    delay(300);
+    delay(500);
     clearLEDS();
     FastLED.show();
-    delay(300);
+    delay(500);
   }
   findRandom = true;
   Position = 0;
+ 
   gameState = level + 1;
-  if (gameState > 7) {
+  if (gameState > 8) {
     gameState = 0;
   }
 }
